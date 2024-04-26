@@ -46,6 +46,9 @@ export default function (Alpine) {
         repeat: modifiers.includes("repeat"),
       };
       let evaluator = evaluateLater(expression);
+      if (typeof evaluator !== "function") {
+        throw new Error("The value of x-timeout must be a function");
+      }
       wait(() => {
         evaluator();
       }, duration, options);
