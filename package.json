@@ -1,8 +1,8 @@
 {
-  "name": "@thewebforge/aplinejs-timeout",
+  "name": "@thewebforge/alpinejs-timeout",
   "version": "1.0.0",
   "description": "An Alpine.js plugin to add timeout functionalities to Alpine",
-  "homepage": "https://aplinejs-timeout.thewebforge.dev",
+  "homepage": "https://alpinejs-timeout.thewebforge.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/thewebforge/alpinejs-timeout.git"
