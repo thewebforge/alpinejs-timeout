@@ -44,9 +44,8 @@ Alpine.plugin(timeout)
 The value of `x-timeout` should be the number of milliseconds you want to wait before the expression is executed.
 
 ```html
-<div x-data="{ show: false }">
-    <button @click="show = true">Show</button>
-    <div x-show="show" x-timeout:2000="show = false">This will disappear after 2 seconds</div>
+<div x-data="{ show: true }">
+    <div x-show="show" x-timeout:2000="show = false">This text will disappear after 2 seconds</div>
 </div>
 ```
 
@@ -57,5 +56,5 @@ The value of `x-timeout` should be the number of milliseconds you want to wait b
 The `.repeat` modifier will repeat the timeout every time the expression is executed.
 
 ```html
-<div  x-data x-timeout:1000.repeat="$el.innerText=new Date().toLocaleString()"></div>
+<div  x-data x-timeout:1000.repeat="$el.innerText = new Date().toLocaleString()"></div>
 ```
