@@ -1,13 +1,13 @@
 {
   "name": "@thewebforge/alpinejs-timeout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An Alpine.js plugin to add timeout functionalities to Alpine",
   "homepage": "https://alpinejs-timeout.thewebforge.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/thewebforge/alpinejs-timeout.git"
   },
-  "author": "Cédric Bontems",
+  "author": "C\u00e9dric Bontems",
   "license": "MIT",
   "main": "dist/module.cjs.js",
   "module": "dist/module.esm.js",
