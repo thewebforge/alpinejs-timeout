@@ -16,6 +16,9 @@
     "esbuild": "~0.16.17"
   },
   "scripts": {
-    "build": "node ./scripts/build.js"
+    "build": "node ./scripts/build.js",
+    "bump": "cz bump",
+    "npmpublish": "npm publish --access=public",
+    "release": "bun run build && bun run bump && bun run npmpublish"
   }
 }
