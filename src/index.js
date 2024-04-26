@@ -6,22 +6,19 @@
  */
 export default function (Alpine) {
   /**
-   * Custom Magic
+   * Wait for a given duration and then execute the given function
    *
-   * @see https://alpinejs.dev/advanced/extending#custom-magics
-   *
-   * @param {string} name The name of the magic. The name "mymagic" will be consumed as $mymagic
-   * @param {*} Alpine The Alpine global object
-   * @param {*} el The DOM element the magic was triggered from
+   * @param {*} fn The function to execute
+   * @param {*} duration The duration in milliseconds
    */
-  Alpine.magic("[name]", (el, { Alpine }) => {
-    return {
-      magic: "magic",
-      isMagic() {
-        return this.magic === "magic";
-      },
-    };
-  });
+  const wait = function (fn, duration, options = {}) {
+    setTimeout(() => {
+      fn();
+      if (options.repeat) {
+        wait(fn, duration, options);
+      }
+    }, duration);
+  };
 
   /**
    * Custom Directive
@@ -38,15 +35,20 @@ export default function (Alpine) {
    * @param {*} cleanup A function you can pass bespoke callbacks to that will run when this directive is removed from the DOM
    */
   Alpine.directive(
-    "[name]",
+    "timeout",
     (
       el,
       { value, modifiers, expression },
       { evaluateLater, effect, cleanup }
     ) => {
+      const duration = parseInt(value);
+      const options = {
+        repeat: modifiers.includes("repeat"),
+      };
       let evaluator = evaluateLater(expression);
-      effect(() => {});
-      cleanup(() => {});
+      wait(() => {
+        evaluator();
+      }, duration, options);
     }
   );
 }

@@ -1,11 +1,11 @@
 {
-  "name": "@thewebforge/aplinejs-plugin-blueprint",
+  "name": "@thewebforge/aplinejs-timeout",
   "version": "1.0.0",
-  "description": "A blueprint to build an Alpine.js plugin",
-  "homepage": "https://thewebforge.dev/plugins/focus",
+  "description": "An Alpine.js plugin to add timeout functionalities to Alpine",
+  "homepage": "https://aplinejs-timeout.thewebforge.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thewebforge/aplinejs-plugin-blueprint.git"
+    "url": "https://github.com/thewebforge/alpinejs-timeout.git"
   },
   "author": "Cédric Bontems",
   "license": "MIT",
